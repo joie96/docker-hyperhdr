@@ -16,9 +16,9 @@ RUN  echo "deb http://deb.debian.org/debian trixie contrib non-free non-free-fir
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 	locale-gen && \
 	apt-get -y install --reinstall ca-certificates && \
-	#HyperHDr
+	#HyperHDR
 	wget -qP /tmp "https://github.com/awawa-dev/HyperHDR/releases/download/v${HYPERHDR_VERSION}/HyperHDR-${HYPERHDR_VERSION}-Linux-${ARCH}.deb" && \
-	apt install /tmp/HyperHDR-${HYPERHDR_VERSION}-Linux-${ARCH}.deb && \
+	apt-get -y install /tmp/HyperHDR-${HYPERHDR_VERSION}-Linux-${ARCH}.deb && \
 	rm /tmp/HyperHDR-${HYPERHDR_VERSION}-Linux-${ARCH}.deb && \
 	#Cleanup
 	rm -rf /var/lib/apt/lists/*
