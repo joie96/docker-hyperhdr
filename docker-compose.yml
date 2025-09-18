@@ -4,6 +4,9 @@ services:
   docker-hyperhdr:
     build:
       context: .
+      args:
+        HYPERHDR_VERSION: "21.0.0.0"
+        ARCH: "aarch64"
     image: joie96/docker-hyperhdr:latest
     #ports:
     #  - "8090:8090"
