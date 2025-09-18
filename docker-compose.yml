@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  docker-hyperhdr:
+    build:
+      context: .
+    image: joie96/docker-hyperhdr:latest
+    #ports:
+    #  - "7780:7780"
+    #  - "5678:5678"
