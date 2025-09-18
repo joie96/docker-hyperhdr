@@ -15,9 +15,9 @@ RUN  echo "deb http://deb.debian.org/debian trixie contrib non-free non-free-fir
 	locale-gen && \
 	apt-get -y install --reinstall ca-certificates && \
 	#HyperHDr
-	curl -fsSL https://awawa-dev.github.io/hyperhdr.public.apt.gpg.key | sudo dd of=/usr/share/keyrings/hyperhdr.public.apt.gpg.key && \
+	curl -fsSL https://awawa-dev.github.io/hyperhdr.public.apt.gpg.key | dd of=/usr/share/keyrings/hyperhdr.public.apt.gpg.key && \
 	chmod go+r /usr/share/keyrings/hyperhdr.public.apt.gpg.key && \
-	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hyperhdr.public.apt.gpg.key] https://awawa-dev.github.io $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperhdr.list > /dev/null && \
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hyperhdr.public.apt.gpg.key] https://awawa-dev.github.io $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hyperhdr.list > /dev/null && \
 	apt update && \
 	apt install hyperhdr -y  && \
 	#Cleanup
