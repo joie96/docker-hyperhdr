@@ -10,6 +10,9 @@ ENV UID=99
 ENV GID=100
 ENV USER="hyperhdr"
 
+ENV GID_VIDEO=44
+ENV GID_SPIDEV=118
+
 # Installiere Packages
 RUN  echo "deb http://deb.debian.org/debian trixie contrib non-free non-free-firmware" >> /etc/apt/sources.list && \
 	# Default Stuff

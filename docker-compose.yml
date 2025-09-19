@@ -23,3 +23,5 @@ services:
     environment:
       - UID=1001
       - GID=1001
+      - GID_VIDEO=44
+      - GID_SPIDEV=118
