@@ -8,11 +8,18 @@ services:
         HYPERHDR_VERSION: "21.0.0.0"
         ARCH: "aarch64"
     image: joie96/docker-hyperhdr:latest
-    #ports:
-    #  - "8090:8090"
-    #  - "8092:8092"
-    #  - "19400:19400"
-    #  - "19444:19444"
-    #  - "19445:19445"
-    #volumes:
-    #  - ./config:/hyperhdr
+    container_name: docker-hyperhdr-1
+    ports:
+      - "8090:8090"
+      - "8092:8092"
+      - "19400:19400"
+      - "19444:19444"
+      - "19445:19445"
+    volumes:
+      - ./config:/hyperhdr
+    devices:
+      - /dev/video0:/dev/video0
+      - /dev/spidev2.0:/dev/spidev2.0
+    environment:
+      - UID=1001
+      - GID=1001
