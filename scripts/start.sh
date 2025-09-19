@@ -7,6 +7,10 @@ usermod -g ${GID} ${USER}
 echo "---Setting umask to ${UMASK}---"
 umask ${UMASK}
 
+echo "---Adding user to groups: video and spidev---"
+usermod -aG video ${USER}
+usermod -aG spidev ${USER}
+
 echo "---Checking for optional scripts---"
 cp -f /opt/custom/user.sh /opt/scripts/start-user.sh > /dev/null 2>&1 ||:
 cp -f /opt/scripts/user.sh /opt/scripts/start-user.sh > /dev/null 2>&1 ||:
